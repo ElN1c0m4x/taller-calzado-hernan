@@ -1,0 +1,42 @@
+---
+import { site, mostrarPendientes } from '../data/site';
+import { whatsappUrl } from '../data/helpers';
+const wsp = whatsappUrl();
+---
+<section class="seccion seccion--alt" id="contacto">
+  <div class="contenedor">
+    <span class="etiqueta">Hablemos</span>
+    <h2 class="titulo-seccion">Contacto</h2>
+    <hr class="costura" />
+    <div class="dos-col">
+      <div class="caja">
+        <h3>Escribinos</h3>
+        <ul class="contacto-lista">
+          <li>
+            <span class="rotulo">Instagram</span>
+            <a href={site.redes.instagram.url} target="_blank" rel="noopener">@{site.redes.instagram.usuario}</a>
+          </li>
+          <li>
+            <span class="rotulo">Facebook</span>
+            <a href={site.redes.facebook.url} target="_blank" rel="noopener">{site.redes.facebook.usuario}</a>
+          </li>
+          <li>
+            <span class="rotulo">WhatsApp</span>
+            {wsp
+              ? <a class="btn btn--wsp" href={wsp} target="_blank" rel="noopener">Abrir chat</a>
+              : mostrarPendientes && <span class="pendiente">Pendiente: número de WhatsApp</span>}
+          </li>
+          {site.telefono && (
+            <li><span class="rotulo">Teléfono</span><a href={`tel:${site.telefono}`}>{site.telefono}</a></li>
+          )}
+        </ul>
+      </div>
+      <div class="caja">
+        <h3>Horarios</h3>
+        {site.horarios
+          ? <ul class="contacto-lista">{site.horarios.map((h) => <li><span class="rotulo">{h.dias}</span>{h.horas}</li>)}</ul>
+          : mostrarPendientes && <span class="pendiente">Pendiente: días y horarios de atención</span>}
+      </div>
+    </div>
+  </div>
+</section>

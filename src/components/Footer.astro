@@ -1,0 +1,17 @@
+---
+import { site } from '../data/site';
+const anio = new Date().getFullYear();
+---
+<footer class="pie">
+  <div class="contenedor pie__in">
+    <div>
+      <strong>{site.nombre}</strong>
+      <p>{site.direccion.calle}, {site.direccion.ciudad} · CP {site.direccion.cp}</p>
+      <p>© {anio} {site.nombre}</p>
+    </div>
+    <nav aria-label="Redes sociales">
+      <a href={site.redes.instagram.url} target="_blank" rel="noopener">Instagram</a>
+      <a href={site.redes.facebook.url} target="_blank" rel="noopener">Facebook</a>
+    </nav>
+  </div>
+</footer>

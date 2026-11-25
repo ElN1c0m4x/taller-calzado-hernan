@@ -1,0 +1,29 @@
+---
+import { site, trabajos } from '../data/site';
+import { whatsappUrl } from '../data/helpers';
+const wsp = whatsappUrl();
+const foto = trabajos.find((t) => t.src);
+---
+<section class="hero" id="inicio">
+  <div class="contenedor hero__grid">
+    <div>
+      <span class="etiqueta">San Pedro, Buenos Aires</span>
+      <h1>Arreglamos tu <em>calzado</em>, valijas, mochilas y bolsos</h1>
+      <p class="hero__texto">
+        Taller de compostura y reparación de calzados, valijas, mochilas, bolsos y carteras. Trabajo hecho con cuidado, a mano y en el barrio.
+      </p>
+      <div class="hero__acciones">
+        <a class="btn btn--primario" href="#servicios">Ver servicios</a>
+        {wsp
+          ? <a class="btn btn--wsp" href={wsp} target="_blank" rel="noopener">Escribinos por WhatsApp</a>
+          : <a class="btn btn--borde" href={site.redes.instagram.url} target="_blank" rel="noopener">Escribinos por Instagram</a>}
+      </div>
+      <p class="hero__lugar">📍 {site.direccion.calle}, San Pedro</p>
+    </div>
+    {foto && (
+      <div class="hero__foto">
+        <img src={foto.src} alt={foto.alt} width="960" height="960" fetchpriority="high" />
+      </div>
+    )}
+  </div>
+</section>

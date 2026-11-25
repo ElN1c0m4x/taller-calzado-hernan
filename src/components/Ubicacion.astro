@@ -1,0 +1,27 @@
+---
+import { site, mostrarPendientes } from '../data/site';
+import { mapsLink } from '../data/helpers';
+---
+<section class="seccion" id="ubicacion">
+  <div class="contenedor">
+    <span class="etiqueta">Dónde estamos</span>
+    <h2 class="titulo-seccion">Ubicación</h2>
+    <hr class="costura" />
+    <div class="dos-col">
+      <div class="caja">
+        <h3>Dirección</h3>
+        <address>
+          {site.direccion.calle}<br />
+          {site.direccion.ciudad}<br />
+          CP {site.direccion.cp}
+        </address>
+        <a class="btn btn--primario" href={mapsLink()} target="_blank" rel="noopener">Cómo llegar</a>
+      </div>
+      <div>
+        {site.direccion.mapsEmbedUrl
+          ? <iframe class="mapa" src={site.direccion.mapsEmbedUrl} title="Mapa del taller" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          : mostrarPendientes && <div class="caja" style="height:100%;display:flex;align-items:center"><span class="pendiente">Pendiente: mapa incrustado (falta confirmar el enlace de Google Maps)</span></div>}
+      </div>
+    </div>
+  </div>
+</section>

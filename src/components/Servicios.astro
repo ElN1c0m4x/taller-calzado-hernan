@@ -1,0 +1,20 @@
+---
+import { servicios } from '../data/site';
+import Icono from './Icono.astro';
+---
+<section class="seccion seccion--alt" id="servicios">
+  <div class="contenedor">
+    <span class="etiqueta">Qué hacemos</span>
+    <h2 class="titulo-seccion">Nuestros servicios</h2>
+    <hr class="costura" />
+    <div class="servicios">
+      {servicios.map((s) => (
+        <article class="servicio">
+          <Icono nombre={s.icono} />
+          <h3>{s.titulo}</h3>
+          <p>{s.texto}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

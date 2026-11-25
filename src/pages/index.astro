@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Servicios from '../components/Servicios.astro';
+import Galeria from '../components/Galeria.astro';
+import Sobre from '../components/Sobre.astro';
+import Ubicacion from '../components/Ubicacion.astro';
+import Contacto from '../components/Contacto.astro';
+import Footer from '../components/Footer.astro';
+---
+<Base
+  titulo="Taller de Calzado Hernán | Reparación de calzado, valijas y bolsos en San Pedro"
+  descripcion="Taller de compostura en San Pedro, Buenos Aires: reparación de calzados, costura de valijas, cambio de cierres y arreglos de mochilas, bolsos y carteras."
+>
+  <Header />
+  <main>
+    <Hero />
+    <Servicios />
+    <Galeria />
+    <Sobre />
+    <Ubicacion />
+    <Contacto />
+  </main>
+  <Footer />
+</Base>

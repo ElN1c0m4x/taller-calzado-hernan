@@ -1,0 +1,18 @@
+---
+import { sobreElTaller, site } from '../data/site';
+---
+<section class="seccion seccion--alt" id="sobre">
+  <div class="contenedor sobre">
+    <div class="sobre__logo">
+      <img src="/logo.webp" alt={`Logo de ${site.nombre}`} width="360" height="360" loading="lazy" />
+    </div>
+    <div class="sobre__texto">
+      <span class="etiqueta">El taller</span>
+      <h2 class="titulo-seccion">Sobre el taller</h2>
+      <hr class="costura" />
+      <div style="margin-top:1.6rem">
+        {sobreElTaller.map((p) => <p>{p}</p>)}
+      </div>
+    </div>
+  </div>
+</section>

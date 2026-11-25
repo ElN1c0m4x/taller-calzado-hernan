@@ -1,0 +1,29 @@
+---
+import { trabajos, espaciosGaleriaPendientes, mostrarPendientes } from '../data/site';
+import Icono from './Icono.astro';
+const vacios = Array.from({ length: espaciosGaleriaPendientes });
+---
+<section class="seccion" id="trabajos">
+  <div class="contenedor">
+    <span class="etiqueta">Trabajos</span>
+    <h2 class="titulo-seccion">Trabajos del taller</h2>
+    <hr class="costura" />
+    <p class="bajada">Algunas fotos del taller. Vamos sumando más, incluyendo antes y después.</p>
+    <div class="galeria">
+      {trabajos.map((t) => t.src ? (
+        <figure><img src={t.src} alt={t.alt} width="960" height="960" loading="lazy" decoding="async" /></figure>
+      ) : (
+        <figure class="antes-despues">
+          <div><img src={t.antes} alt={`Antes: ${t.alt}`} loading="lazy" /><span class="tag">Antes</span></div>
+          <div><img src={t.despues} alt={`Después: ${t.alt}`} loading="lazy" /><span class="tag">Después</span></div>
+        </figure>
+      ))}
+      {mostrarPendientes && vacios.map(() => (
+        <div class="galeria__vacio">
+          <Icono nombre="foto" />
+          <span class="pendiente">Pendiente: foto del taller</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

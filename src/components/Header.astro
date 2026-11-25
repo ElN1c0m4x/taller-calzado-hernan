@@ -1,0 +1,37 @@
+---
+import { site } from '../data/site';
+const links = [
+  { href: '#servicios', texto: 'Servicios' },
+  { href: '#trabajos', texto: 'Trabajos' },
+  { href: '#ubicacion', texto: 'Ubicación' },
+  { href: '#contacto', texto: 'Contacto' },
+];
+---
+<header class="header">
+  <div class="contenedor header__in">
+    <a class="marca" href="#inicio" aria-label={`${site.nombre} - inicio`}>
+      <img src="/logo.webp" alt="" width="48" height="48" />
+      <span>{site.nombre}</span>
+    </a>
+    <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav" id="nav" aria-label="Principal">
+      {links.map((l) => <a href={l.href}>{l.texto}</a>)}
+    </nav>
+  </div>
+</header>
+<script>
+  const btn = document.querySelector('.menu-btn');
+  const nav = document.getElementById('nav');
+  btn?.addEventListener('click', () => {
+    const abierto = nav?.classList.toggle('abierto');
+    btn.setAttribute('aria-expanded', String(!!abierto));
+  });
+  nav?.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => {
+      nav.classList.remove('abierto');
+      btn?.setAttribute('aria-expanded', 'false');
+    })
+  );
+</script>

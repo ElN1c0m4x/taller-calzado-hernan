@@ -1,0 +1,25 @@
+---
+import '../styles/global.css';
+import { site } from '../data/site';
+const { titulo, descripcion } = Astro.props;
+---
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titulo}</title>
+    <meta name="description" content={descripcion} />
+    <meta name="theme-color" content="#0b0a09" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={titulo} />
+    <meta property="og:description" content={descripcion} />
+    <meta property="og:image" content="/logo.webp" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:site_name" content={site.nombre} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

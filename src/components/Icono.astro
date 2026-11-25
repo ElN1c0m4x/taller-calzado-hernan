@@ -1,0 +1,28 @@
+---
+const { nombre } = Astro.props;
+---
+{nombre === 'zapato' && (
+  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M5 30c0-6 3-12 3-17h8c1 5 5 8 11 10 5 1.5 12 3 12 8v3H5z"/><path d="M5 36h38"/><path d="M16 13l4 5M21 16l3 4"/>
+  </svg>
+)}
+{nombre === 'valija' && (
+  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="8" y="14" width="32" height="26" rx="4"/><path d="M18 14v-4h12v4M16 14v26M32 14v26"/>
+  </svg>
+)}
+{nombre === 'cierre' && (
+  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M24 4v40"/><path d="M18 10h12M18 17h12M18 24h12"/><rect x="19" y="29" width="10" height="9" rx="2"/>
+  </svg>
+)}
+{nombre === 'bolso' && (
+  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M8 18h32l3 22H5z"/><path d="M16 18c0-8 3-12 8-12s8 4 8 12"/>
+  </svg>
+)}
+{nombre === 'foto' && (
+  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="5" y="11" width="38" height="28" rx="4"/><circle cx="24" cy="25" r="7"/><path d="M17 11l2-4h10l2 4"/>
+  </svg>
+)}
