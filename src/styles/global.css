@@ -160,3 +160,6 @@ p { margin: 0; }
 .pie nav a { color: var(--dorado-claro); text-underline-offset: 4px; }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+
+/* Banner */
+.banner img { width: 100%; height: auto; display: block; }
