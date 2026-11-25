@@ -24,8 +24,8 @@ export const site = {
   },
 
   redes: {
-    instagram: { usuario: 'tallerdelcalzadohernan', url: 'https://www.instagram.com/tallerdelcalzadohernan/' },
-    facebook: { usuario: 'Tallerdelcalzadohernan', url: 'https://www.facebook.com/Tallerdelcalzadohernan' },
+    instagram: { usuario: 'tallerdelcalzadohernan', url: 'https://www.instagram.com/tallerdecalzadohernan/' },
+    facebook: { usuario: 'Tallerdelcalzadohernan', url: 'https://www.facebook.com/profile.php?id=61575417453572' },
   },
 
   // PENDIENTE: número en formato internacional sin "+" ni espacios (ej. 5493329XXXXXX).
